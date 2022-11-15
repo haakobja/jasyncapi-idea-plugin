@@ -25,7 +25,7 @@ intellij {
     plugins.set(listOf("yaml"))
 }
 tasks.getByName<org.jetbrains.intellij.tasks.PatchPluginXmlTask>("patchPluginXml") {
-    sinceBuild.set("212")
+    sinceBuild.set("222")
     untilBuild.set("223.*")
     changeNotes.set("""
         <p>Added support for IDEA 2022.3</p>
