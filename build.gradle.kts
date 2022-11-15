@@ -5,7 +5,7 @@ plugins {
 }
 
 group "com.asyncapi.plugin.idea"
-version = "1.7.1+idea2021"
+version = "1.7.2+idea2022"
 
 repositories {
     mavenCentral()
@@ -25,9 +25,10 @@ intellij {
     plugins.set(listOf("yaml"))
 }
 tasks.getByName<org.jetbrains.intellij.tasks.PatchPluginXmlTask>("patchPluginXml") {
-    sinceBuild.set("211")
-    untilBuild.set("222.*")
+    sinceBuild.set("212")
+    untilBuild.set("223.*")
     changeNotes.set("""
+        <p>Added support for IDEA 2022.3</p>
         <p>Fix preview on Windows</p>
     """.trimIndent())
 }
@@ -54,17 +55,18 @@ tasks.getByName<org.jetbrains.intellij.tasks.RunPluginVerifierTask>("runPluginVe
         "2022.2",
         "2022.2.1",
         "2022.2.2",
-        "2022.2.3"
+        "2022.2.3",
+        "2022.3"
     ))
     verifierVersion.set("1.284")
 }
 
 tasks {
     compileKotlin {
-        kotlinOptions.jvmTarget = "11"
+        kotlinOptions.jvmTarget = "17"
     }
     compileTestKotlin {
-        kotlinOptions.jvmTarget = "11"
+        kotlinOptions.jvmTarget = "17"
     }
     test {
         useJUnitPlatform()
