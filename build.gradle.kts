@@ -29,7 +29,7 @@ tasks.getByName<org.jetbrains.intellij.tasks.PatchPluginXmlTask>("patchPluginXml
     untilBuild.set("223.*")
     changeNotes.set("""
         <p>Added support for IDEA 2022.3</p>
-        <p>Fix preview on Windows</p>
+        <p>Updated Java version to version 17 as required by IntelliJ IDEA 2022.3</p>
     """.trimIndent())
 }
 
